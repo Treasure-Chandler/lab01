@@ -6,7 +6,7 @@
 
  package lab01;
 
- import java.util.Scanner; //needed for the Scanner class
+ import java.util.Scanner; // needed for the Scanner class
 
  public class NumericTypes {
     /**
@@ -30,7 +30,6 @@
                         "\n\tfloatNumber = " + floatNumber +
                         "\n\tdoubleNumber = " + doubleNumber + "\n";
         System.out.println(pbmTitle + output);
-
         displayConsole(pbmTitle, byteNumber, shortNumber,
                       intNumber, longNumber, floatNumber,
                       doubleNumber);
@@ -47,14 +46,6 @@
         doubleNumber = keyboardInput.nextDouble();
 
         pbmTitle = "For problem 2(B): ";
-        String secondOutput = "\n\tbyteNumber = " + byteNumber +
-                              "\n\tshortNumber = " + shortNumber +
-                              "\n\tintNumber = " + intNumber +
-                              "\n\tlongNumber = " + longNumber +
-                              "\n\tfloatNumber = " + floatNumber +
-                              "\n\tdoubleNumber = " + doubleNumber + "\n";
-        System.out.println(pbmTitle + secondOutput);
-
         displayConsole(pbmTitle, byteNumber, shortNumber,
                        intNumber, longNumber, floatNumber,
                        doubleNumber);
@@ -68,14 +59,6 @@
         doubleNumber = 127;
 
         pbmTitle = "For problem 3(A): ";
-        String thirdOutput = "\n\tbyteNumber = " + byteNumber +
-                             "\n\tshortNumber = " + shortNumber +
-                             "\n\tintNumber = " + intNumber +
-                             "\n\tlongNumber = " + longNumber +
-                             "\n\tfloatNumber = " + floatNumber +
-                             "\n\tdoubleNumber = " + doubleNumber + "\n";
-        System.out.println(pbmTitle + thirdOutput);
-
         displayConsole(pbmTitle, byteNumber, shortNumber,
                        intNumber, longNumber, floatNumber,
                        doubleNumber);
@@ -105,12 +88,6 @@
         doubleNumber = secondKeyboardInput.nextDouble();
 
         pbmTitle = "For problem 3(B): ";
-        System.out.println(pbmTitle + "\n\tbyteNumber = " + byteNumber +
-                           "\n\tshortNumber = " + shortNumber +
-                           "\n\tintNumber = " + intNumber +
-                           "\n\tlongNumber = " + longNumber +
-                           "\n\tfloatNumber = " + floatNumber +
-                           "\n\tdoubleNumber = " + doubleNumber + "\n");
         displayConsole(pbmTitle, byteNumber, shortNumber,
                        intNumber, longNumber, floatNumber,
                        doubleNumber);
@@ -126,17 +103,9 @@
         doubleNumber = fourthKeyboardInput.nextDouble();
 
         pbmTitle = "For problem 3(B):";
-        System.out.println(pbmTitle + "\n\tbyteNumber = " + byteNumber +
-                           "\n\tshortNumber = " + shortNumber +
-                           "\n\tintNumber = " + intNumber +
-                           "\n\tlongNumber = " + longNumber +
-                           "\n\tfloatNumber = " + floatNumber +
-                           "\n\tdoubleNumber = " + doubleNumber + "\n");
         displayConsole(pbmTitle, byteNumber, shortNumber,
                       intNumber, longNumber, floatNumber,
                       doubleNumber);
-
-        
         /*
          * 3(B) Explanation:
          * My overall experience has been the same experience
@@ -150,7 +119,15 @@
 
         // problem 4(A):
         intNumber = 127;
+        /* Without byte casting, it throws a conversion error,
+         * mainly due to the fact that byte is not large enough
+         * to be converted to an integer.
+        */
         byteNumber = (byte)intNumber;
+        /* Without short casting, it throws a conversion error,
+         * mainly due to the fact that short is not large enough
+         * to be converted to an integer.
+         */
         shortNumber = (short)intNumber;
         longNumber = intNumber;
         floatNumber = intNumber;
@@ -165,6 +142,12 @@
 
         intNumber = byteNumber;
         intNumber = shortNumber;
+        /* Without int casting, it throws a conversion
+         * error for the longNumber, floatNumber, and
+         * doubleNumber literals, due to the fact that
+         * the int data type is not large enough to be
+         * converted to a long, float, and double
+        */
         intNumber = (int)longNumber;
         intNumber = (int)floatNumber;
         intNumber = (int)doubleNumber;
@@ -176,24 +159,45 @@
          */
 
         pbmTitle = "For problem 4(B):";
-        System.out.println(pbmTitle + "\n\tbyteNumber = " + byteNumber +
-                           "\n\tshortNumber = " + shortNumber +
-                           "\n\tintNumber = " + intNumber +
-                           "\n\tlongNumber = " + longNumber +
-                           "\n\tfloatNumber = " + floatNumber +
-                           "\n\tdoubleNumber = " + doubleNumber + "\n");
         displayConsole(pbmTitle, byteNumber, shortNumber,
                       intNumber, longNumber, floatNumber,
                       doubleNumber);
 
         // problem 5:
-        byteNumber = (byte)128;
+        intNumber = -128;
+        byteNumber = (byte)intNumber;
+        shortNumber = (short)intNumber;
+        longNumber = intNumber;
+        floatNumber = intNumber;
+        doubleNumber = intNumber;
+        Scanner sixthKeyboardInput = new Scanner(System.in);
+        System.out.println("Now, simply enter the integer" + 
+                           " number, 128, six times:");
+        intNumber = sixthKeyboardInput.nextInt();
+        byteNumber = sixthKeyboardInput.nextByte();
+        shortNumber = sixthKeyboardInput.nextShort();
+        longNumber = sixthKeyboardInput.nextLong();
+        floatNumber = sixthKeyboardInput.nextFloat();
+        doubleNumber = sixthKeyboardInput.nextDouble();
         
+        pbmTitle = "For problem 5(a):";
+        displayConsole(pbmTitle, byteNumber, shortNumber,
+                      intNumber, longNumber, floatNumber,
+                      doubleNumber);
+        /*
+         * Without byte casting, it throws a conversion
+         * error for the byteNumber literal. Without short
+         * casting, it throws a conversion error for the
+         * shortNumber literal, due to the fact that byte
+         * and short are not large enough to be converted 
+         * to an integer.
+         */
 
         keyboardInput.close();
         secondKeyboardInput.close();
         fourthKeyboardInput.close();
         fifthKeyboardInput.close();
+        sixthKeyboardInput.close();
 
     } // end of main()
 
