@@ -4,12 +4,9 @@
  * Lab 01
  */
 
-
  package lab01;
 
-
  import java.util.Scanner; //needed for the Scanner class
-
 
  public class NumericTypes {
     /**
@@ -38,11 +35,10 @@
                       intNumber, longNumber, floatNumber,
                       doubleNumber);
 
-
         // problem 2(B):
         Scanner keyboardInput = new Scanner(System.in);
-        System.out.println("Please enter the same integer number," + 
-                           " 123, six times:");
+        System.out.println("First, please enter the same integer" + 
+                           " number, 123, six times:");
         byteNumber = keyboardInput.nextByte();
         shortNumber = keyboardInput.nextShort();
         intNumber = keyboardInput.nextInt();
@@ -99,7 +95,7 @@
 
         // problem 3(B):
         Scanner secondKeyboardInput = new Scanner(System.in);
-        System.out.println("Please enter the same integer number," +
+        System.out.println("Now, enter the same integer number," +
                            " 127, six times:");
         byteNumber = secondKeyboardInput.nextByte();
         shortNumber = secondKeyboardInput.nextShort();
@@ -112,17 +108,94 @@
         System.out.println(pbmTitle + "\n\tbyteNumber = " + byteNumber +
                            "\n\tshortNumber = " + shortNumber +
                            "\n\tintNumber = " + intNumber +
-                           "\n\tlongNumber" + longNumber +
+                           "\n\tlongNumber = " + longNumber +
                            "\n\tfloatNumber = " + floatNumber +
                            "\n\tdoubleNumber = " + doubleNumber + "\n");
         displayConsole(pbmTitle, byteNumber, shortNumber,
                        intNumber, longNumber, floatNumber,
                        doubleNumber);
 
+        Scanner fourthKeyboardInput = new Scanner(System.in);
+        System.out.println("Once again, enter the same integer" + 
+                           " number, 123, six times:");
+        byteNumber = fourthKeyboardInput.nextByte();
+        shortNumber = fourthKeyboardInput.nextShort();
+        intNumber = fourthKeyboardInput.nextInt();
+        longNumber = fourthKeyboardInput.nextLong();
+        floatNumber = fourthKeyboardInput.nextFloat();
+        doubleNumber = fourthKeyboardInput.nextDouble();
+
+        pbmTitle = "For problem 3(B):";
+        System.out.println(pbmTitle + "\n\tbyteNumber = " + byteNumber +
+                           "\n\tshortNumber = " + shortNumber +
+                           "\n\tintNumber = " + intNumber +
+                           "\n\tlongNumber = " + longNumber +
+                           "\n\tfloatNumber = " + floatNumber +
+                           "\n\tdoubleNumber = " + doubleNumber + "\n");
+        displayConsole(pbmTitle, byteNumber, shortNumber,
+                      intNumber, longNumber, floatNumber,
+                      doubleNumber);
+
+        
+        /*
+         * 3(B) Explanation:
+         * My overall experience has been the same experience
+         * as problem 3(A). As the literals go through changes,
+         * they will always display each change as they are
+         * displayed to the console. Due to the fact that the
+         * last value the user has to input is 123, that means
+         * the literals will display 123 in the console, which
+         * means the program is working correctly.
+         */
+
+        // problem 4(A):
+        intNumber = 127;
+        byteNumber = (byte)intNumber;
+        shortNumber = (short)intNumber;
+        longNumber = intNumber;
+        floatNumber = intNumber;
+        doubleNumber = intNumber;
+
+        // problem 4(B):
+        Scanner fifthKeyboardInput = new Scanner(System.in);
+
+        System.out.println("Now, simply enter the integer" +
+                           " number, 127, one time:");
+        intNumber = fifthKeyboardInput.nextInt();
+
+        intNumber = byteNumber;
+        intNumber = shortNumber;
+        intNumber = (int)longNumber;
+        intNumber = (int)floatNumber;
+        intNumber = (int)doubleNumber;
+        /*
+         * 4(B) Explanation:
+         * Even if the literal intNumber is assigned to
+         * different literals, it still has the same behavior
+         * when it is displayed in the console.
+         */
+
+        pbmTitle = "For problem 4(B):";
+        System.out.println(pbmTitle + "\n\tbyteNumber = " + byteNumber +
+                           "\n\tshortNumber = " + shortNumber +
+                           "\n\tintNumber = " + intNumber +
+                           "\n\tlongNumber = " + longNumber +
+                           "\n\tfloatNumber = " + floatNumber +
+                           "\n\tdoubleNumber = " + doubleNumber + "\n");
+        displayConsole(pbmTitle, byteNumber, shortNumber,
+                      intNumber, longNumber, floatNumber,
+                      doubleNumber);
+
+        // problem 5:
+        byteNumber = (byte)128;
+        
+
         keyboardInput.close();
         secondKeyboardInput.close();
-    } // end of main()
+        fourthKeyboardInput.close();
+        fifthKeyboardInput.close();
 
+    } // end of main()
 
     // problem 2(A):
     /**
