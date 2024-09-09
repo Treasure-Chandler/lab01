@@ -172,7 +172,7 @@
         doubleNumber = intNumber;
         Scanner sixthKeyboardInput = new Scanner(System.in);
         System.out.println("Now, simply enter the integer" + 
-                           " number, 128, six times:");
+                           " number, -128, six times:");
         intNumber = sixthKeyboardInput.nextInt();
         byteNumber = sixthKeyboardInput.nextByte();
         shortNumber = sixthKeyboardInput.nextShort();
@@ -180,7 +180,7 @@
         floatNumber = sixthKeyboardInput.nextFloat();
         doubleNumber = sixthKeyboardInput.nextDouble();
         
-        pbmTitle = "For problem 5(a):";
+        pbmTitle = "For problem 5(c):";
         displayConsole(pbmTitle, byteNumber, shortNumber,
                       intNumber, longNumber, floatNumber,
                       doubleNumber);
@@ -193,11 +193,43 @@
          * to an integer.
          */
 
+        intNumber = 128;
+        /*
+         * This line is commented out due to the fact that
+         * 127 is the limit for the byte data type. Trying
+         * to input 128 when it comes time for byteNumber's
+         * input will throw an exception, as 128 is out of
+         * its range.
+         */
+        // byteNumber = (byte)intNumber;
+        shortNumber = (short)intNumber;
+        longNumber = intNumber;
+        floatNumber = intNumber;
+        doubleNumber = intNumber;
+        Scanner seventhKeyboardInput = new Scanner(System.in);
+        System.out.println("Now, simply enter the integer" + 
+                           " number, 128, five times:");
+        intNumber = seventhKeyboardInput.nextInt();
+        // byteNumber = seventhKeyboardInput.nextByte();
+        shortNumber = seventhKeyboardInput.nextShort();
+        longNumber = seventhKeyboardInput.nextLong();
+        floatNumber = seventhKeyboardInput.nextFloat();
+        doubleNumber = seventhKeyboardInput.nextDouble();
+
+        pbmTitle = "For problem 5(a):";
+        System.out.println(pbmTitle + "\n" +
+                           "\n\tshortNumber = " + shortNumber +
+                           "\n\tintNumber = " + intNumber +
+                           "\n\tlongNumber = " + longNumber +
+                           "\n\tfloatNumber = " + floatNumber +
+                           "\n\tdoubleNumber = " + doubleNumber + "\n");
+
         keyboardInput.close();
         secondKeyboardInput.close();
         fourthKeyboardInput.close();
         fifthKeyboardInput.close();
         sixthKeyboardInput.close();
+        seventhKeyboardInput.close();
 
     } // end of main()
 
